@@ -1,0 +1,155 @@
+@import url('https://fonts.googleapis.com/css2?family=Delius&family=Nata+Sans:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Delius&family=Nata+Sans:wght@100..900&family=Varela+Round&display=swap');
+*{
+    margin: 0;
+    font-family: 'Delius';
+    border: border-box;
+}
+
+.forecast-grid {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.forecast-day img {
+  width: 48px;
+  height: 48px;
+}
+
+.forecast-day {
+  background-color: var(--card-bg, #ffffff);
+  border-radius: 12px;
+  padding: 10px;
+  margin: 8px;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 200px;
+  cursor: pointer;
+}
+
+.forecast-day:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+body.dark-mode .forecast-day {
+  --card-bg: #1f1f1f;
+  color: #f0f0f0;
+}
+
+.forecast-grid {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.forecast-day img {
+  width: 48px;
+  height: 48px;
+}
+
+.dark-mode .card {
+  background-color: #1e1e1e !important;
+  color: #ffffff !important;
+  border-color: #444 !important;
+}
+
+.dark-mode .card-header {
+  background-color: #292929 !important;
+  border-bottom: 1px solid #444 !important;
+}
+
+/* Input & button base style */
+.search-box,
+.nav-btn {
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  outline: none;
+  margin-left: 10px;
+  margin-bottom: 0; /* 🔥 removes margin-bottom if present */
+}
+
+/* Remove margin-top if any */
+#search-button {
+  margin-top: 0 !important;
+}
+
+/* Dark mode styles */
+body.dark-mode .search-box,
+body.dark-mode .nav-btn {
+  background-color: #333;
+  color: #fff;
+  border: 1px solid #666;
+}
+
+body.dark-mode .search-box::placeholder {
+  color: #aaa;
+}
+
+body.dark-mode .nav-btn:hover {
+  background-color: #555;
+  color: #fff;
+}
+
+/* Light mode navbar style */
+.custom-navbar {
+  background-color: #f8f9fa;
+  color: #000;
+}
+
+/* Dark mode navbar style */
+body.dark-mode .custom-navbar {
+  background-color: #1e1e1e;
+  color: #fff;
+}
+
+/* Navbar brand and link styles */
+.custom-navbar .navbar-brand,
+.custom-navbar .nav-link,
+.custom-navbar .dropdown-item {
+  color: inherit;
+  transition: color 0.3s;
+}
+
+/* Hover effect */
+.custom-navbar .nav-link:hover,
+.custom-navbar .dropdown-item:hover {
+  color: #0d6efd; /* Bootstrap primary color */
+}
+
+/* Navbar toggler icon for dark mode */
+body.dark-mode .navbar-toggler {
+  border-color: #fff;
+}
+
+body.dark-mode .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255, 0.7)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+#weather-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  pointer-events: none;
+  overflow: hidden;
+  filter: blur(20px);       /* <- BLUR effect */
+  transform: scale(1.1);     /* Slightly scale for edge coverage */
+  opacity: 0.6;              /* Optional: reduce brightness */
+  pointer-events: none;      /* So it doesn't block clicks */
+}
+
+.card {
+  background-color: rgba(255, 255, 255, 0.8); /* Light mode */
+  backdrop-filter: blur(5px);
+}
+
+.dark-mode .card {
+  background-color: rgba(0, 0, 0, 0.6); /* Dark mode */
+  backdrop-filter: blur(5px);
+}
